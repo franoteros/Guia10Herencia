@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ej02-electrodomesticos">
+  <ClassDiagramComponents>
+    <Class name="Lavadora" package="" visibility="public" xPosition="101.0" yPosition="357.0">
+      <Fields>
+        <Field name="carga" type="Double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearLavadora" returnType="void" visibility="public"/>
+        <Method name="precioFinal" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Electrodomestico" package="" visibility="public" xPosition="226.0" yPosition="15.0">
+      <Fields>
+        <Field name="precio" type="double" visibility="private"/>
+        <Field name="color" type="String" visibility="private"/>
+        <Field name="consumoEnergetico" type="String" visibility="private"/>
+        <Field name="peso" type="Double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="comprobarConsumo" returnType="String" visibility="public">
+          <Argument type="String" name="letra"/>
+        </Method>
+        <Method name="comprobarColor" returnType="String" visibility="public">
+          <Argument type="String" name="color"/>
+        </Method>
+        <Method name="crearElectrodomestico" returnType="void" visibility="public"/>
+        <Method name="precioFinal" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Televisor" package="" visibility="public" xPosition="456.0" yPosition="357.0">
+      <Fields>
+        <Field name="resolucion" type="int" visibility="private"/>
+        <Field name="sintonizador" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearTelevisor" returnType="void" visibility="public"/>
+        <Method name="precioFinal" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Lavadora" target="Electrodomestico"/>
+    <IsRelation name="is" source="Televisor" target="Electrodomestico"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="DiagramaBarco">
+  <ClassDiagramComponents>
+    <Class name="Barco" package="" visibility="public" xPosition="15.0" yPosition="200.0">
+      <Fields>
+        <Field name="matricula" type="String" visibility="private"/>
+        <Field name="eslora" type="int" visibility="private"/>
+        <Field name="fechaFabricacion" type="Date" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="modulo" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Velero" package="" visibility="public" xPosition="181.0" yPosition="15.0">
+      <Fields>
+        <Field name="numMastiles" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="modulo" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="BarcoMotor" package="" visibility="public" xPosition="211.0" yPosition="231.0">
+      <Fields>
+        <Field name="potencia" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="modulo" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="YateLujo" package="" visibility="public" xPosition="211.0" yPosition="433.0">
+      <Fields>
+        <Field name="potencia" type="int" visibility="private"/>
+        <Field name="numCamarotes" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="modulo" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Alquiler" package="" visibility="public" xPosition="428.0" yPosition="187.0">
+      <Fields>
+        <Field name="nombreCliente" type="String" visibility="private"/>
+        <Field name="dniCliente" type="Object" visibility="private"/>
+        <Field name="fechaAlquiler" type="Date" visibility="private"/>
+        <Field name="fechaDevolucion" type="Date" visibility="private"/>
+        <Field name="posAmarre" type="String" visibility="private"/>
+        <Field name="barco" type="Barco" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="alquiler" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="BarcoMotor" target="Barco"/>
+    <HasRelation name="alquilerBarcos" source="Alquiler" target="YateLujo" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+    <IsRelation name="is" source="Velero" target="Barco"/>
+    <IsRelation name="is" source="YateLujo" target="Barco"/>
+    <HasRelation name="alquilerBarcos" source="Alquiler" target="Velero" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+    <HasRelation name="alquilerBarcos" source="Alquiler" target="BarcoMotor" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
